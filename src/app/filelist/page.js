@@ -35,7 +35,7 @@ const Filelist = () => {
     if (result.success) {
       setPdfFiles(result.data);
     } else {
-      alert("There is an error on getting data");
+      console.log("There is an error on getting data");
     }
   };
   const handleDownload = async (fileName) => {
@@ -121,6 +121,11 @@ const Filelist = () => {
                   </td>
                 </tr>
               ))}
+              {!PdfFiles.length && (
+                <tr className="text-center">
+                  <td colSpan="3">No files found.</td>
+                </tr>
+              )}
               {/* Add more rows as needed */}
             </tbody>
           </table>
