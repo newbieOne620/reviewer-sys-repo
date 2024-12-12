@@ -15,7 +15,6 @@ export async function POST(request) {
     const dateCreated = new Date();
     const uniqueId = uuidv4();
 
-    // Insert the data into the database
     const query = `
       INSERT INTO pdf_tbl (file_uuid, file_desc, upload_date, file_name)
       VALUES ($1, $2, $3, $4)
